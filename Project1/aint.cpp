@@ -1,5 +1,5 @@
 
-#include "aint.h"
+#include "aint.hpp"
 
 aint::aint()
 {
@@ -10,6 +10,10 @@ aint::aint()
 
 aint::aint(unsigned u)
 {
+	size = 0;
+	sizeDeclared = 10;
+	ptr = new unsigned[10];
+
 	if (u == 0)
 	{
 		size = 0;
@@ -18,6 +22,7 @@ aint::aint(unsigned u)
 	else
 	{
 		this->size = 1;
+	
 		ptr[0] = u;
 	}
 
