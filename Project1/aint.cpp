@@ -14,25 +14,30 @@ aint::aint(unsigned u)
 	{
 		size = 0;
 	}
-	//else
-//	{
-//		int i i; = 0;
-//		while (i > 0)
-//		{
 
-	//	}
+	else
+	{
+		this->size = 1;
+		ptr[0] = u;
+	}
 
-//	}
 }
 
+int aint::getSize() {
+	return size; 
+}
+	int aint::getSizeDeclared() {
+	return sizeDeclared;
+}
 aint::aint(const aint& other)
 {
 
 }
 
+
 aint::~aint()
 {
-	//delete[] size;
+	delete[] ptr;
 }
 
 aint& aint::operator=(unsigned u)
@@ -146,6 +151,8 @@ aint& aint::operator>>(const size_t& val)
 
 bool aint::zero() const
 {
+	if (size == 0)	return true; 
+	else 
 	return false;
 }
 

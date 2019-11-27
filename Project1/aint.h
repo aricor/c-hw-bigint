@@ -38,7 +38,8 @@ public:
 
 	bool zero() const;
 	void swap(aint &other);
-
+	int getSize();
+	int getSizeDeclared();
 private:
 	long long size;
 	unsigned* ptr;

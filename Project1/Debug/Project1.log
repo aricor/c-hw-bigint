@@ -1,2 +1,6 @@
-﻿  main.cpp
+﻿  aint.cpp
+c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(27): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(30): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+  main.cpp
+  Generating Code...
   Project1.vcxproj -> C:\Users\Admin\Desktop\c++hw\Project1\Debug\Project1.exe
