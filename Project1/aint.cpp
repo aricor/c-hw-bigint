@@ -3,24 +3,25 @@
 
 aint::aint()
 {
-	size = new size_t[64];
+	//int sizedeclared = 10; 
+	//unsigned (*ptr)[sizedeclared];
 }
 
 aint::aint(unsigned u)
 {
-	if (u == 0)
-	{
-		size = nullptr;
-	}
-	else
-	{
-		int i i; = 0;
-		while (i > 0)
-		{
+	//if (u == 0)
+	//{
+	//	size = nullptr;
+	//}
+	//else
+//	{
+//		int i i; = 0;
+//		while (i > 0)
+//		{
 
-		}
+	//	}
 
-	}
+//	}
 }
 
 aint::aint(const aint& other)
@@ -30,7 +31,7 @@ aint::aint(const aint& other)
 
 aint::~aint()
 {
-	delete[] data;
+	//delete[] size;
 }
 
 aint& aint::operator=(unsigned u)
@@ -149,6 +150,6 @@ bool aint::zero() const
 
 void aint::swap(aint &other)
 {
-	 unsigned 
+	  
 }
 

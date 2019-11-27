@@ -40,9 +40,9 @@ public:
 	void swap(aint &other);
 
 private:
-	size_t *size
-	unsigned* ptr; 
-	size_t *sizedeclared; 
+	long long size;
+	unsigned* ptr;
+	long long sizedeclared; 
 };
 
 #endif
