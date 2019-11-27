@@ -42,7 +42,7 @@ public:
 private:
 	long long size;
 	unsigned* ptr;
-	long long sizedeclared; 
+	long long sizeDeclared; 
 };
 
 #endif

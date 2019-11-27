@@ -3,9 +3,9 @@
 
 aint::aint()
 {
-	int sizedeclared = 10; 
-	int size = 0;
-	unsigned (*ptr)[10];
+	this->sizeDeclared = 10;
+	this->size = 0;
+	this->ptr = new unsigned[10];
 }
 
 aint::aint(unsigned u)
