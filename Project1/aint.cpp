@@ -3,16 +3,17 @@
 
 aint::aint()
 {
-	//int sizedeclared = 10; 
-	//unsigned (*ptr)[sizedeclared];
+	int sizedeclared = 10; 
+	int size = 0;
+	unsigned (*ptr)[10];
 }
 
 aint::aint(unsigned u)
 {
-	//if (u == 0)
-	//{
-	//	size = nullptr;
-	//}
+	if (u == 0)
+	{
+		size = 0;
+	}
 	//else
 //	{
 //		int i i; = 0;
