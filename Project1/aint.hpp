@@ -1,7 +1,7 @@
 #ifndef _AINT_H_
 #define _AINT_H_
-#include <iostream>;
-using namespace std; 
+#include <iostream>
+using namespace std;
 class aint
 {
 public:
@@ -38,8 +38,7 @@ public:
 	aint& operator<<(const size_t& val);
 	aint& operator>>(const size_t& val);
 
-	ostream& operator<<(ostream& os, const aint& out);
-	istream& operator>>(istream& is, aint& in);
+
 	bool zero() const;
 	void swap(aint &other);
 	long long getSize();
@@ -50,4 +49,6 @@ private:
 	long long sizeDeclared; 
 };
 
+ostream& operator<<(ostream& os, const aint& out);
+istream& operator>>(istream& is, aint& in);
 #endif

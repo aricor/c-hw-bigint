@@ -62,7 +62,13 @@ aint& aint::operator=(const aint& other) {
 
 // move assignment 
 aint& aint::operator=(aint&& other) {
-	swap();
+	delete this->ptr; 
+	this->ptr = other.ptr; 
+	this->size = other.size; 
+	this->sizeDeclared = other.sizeDeclared;
+	other.ptr = new unsigned[10];
+	other.size = 0; 
+	other.sizeDeclared = 10; 
 	return *this; 
 }
 
@@ -179,13 +185,17 @@ bool aint::zero() const
 
 void aint::swap(aint &other)
 {
+	unsigned* temp; 
+	temp = ptr; 
+	ptr = other.ptr; 
+	other.ptr = temp; 
 	  
 }
 ostream& operator<<(ostream& os, const aint& out) {
-
+	return os; 
 }
 istream& operator>>(istream& is, aint& in) {
-
+	return is; 
 }
 
 

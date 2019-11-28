@@ -1,23 +1,5 @@
-﻿  aint.cpp
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(41): error C2804: binary 'operator <<' has too many parameters
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(42): error C2804: binary 'operator >>' has too many parameters
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(51): warning C4521: 'aint': multiple copy constructors specified
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(31): error C2556: '__int64 aint::getSize(void)': overloaded function differs only by return type from 'int aint::getSize(void)'
-  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(45): note: see declaration of 'aint::getSize'
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(31): error C2371: 'aint::getSize': redefinition; different basic types
-  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(45): note: see declaration of 'aint::getSize'
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(35): error C2556: '__int64 aint::getSizeDeclared(void)': overloaded function differs only by return type from 'int aint::getSizeDeclared(void)'
-  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(46): note: see declaration of 'aint::getSizeDeclared'
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(35): error C2371: 'aint::getSizeDeclared': redefinition; different basic types
-  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(46): note: see declaration of 'aint::getSizeDeclared'
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(66): error C2660: 'aint::swap': function does not take 0 arguments
-  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(44): note: see declaration of 'aint::swap'
-  main.cpp
+﻿  main.cpp
 c:\users\admin\desktop\c++hw\project1\project1\main.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(41): error C2804: binary 'operator <<' has too many parameters
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(42): error C2804: binary 'operator >>' has too many parameters
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(51): warning C4521: 'aint': multiple copy constructors specified
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(50): warning C4521: 'aint': multiple copy constructors specified
 c:\users\admin\desktop\c++hw\project1\project1\main.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  Generating Code...
+  Project1.vcxproj -> C:\Users\Admin\Desktop\c++hw\Project1\Debug\Project1.exe
