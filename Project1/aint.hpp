@@ -13,7 +13,7 @@ public:
 	aint(const aint& other); // copy constructor 2
 	aint(aint& other); // move constructor
 	aint& operator=(const aint& other); // copy assignment 2
-	aint& operator=(aint& other); // move assignment 
+	aint& operator=(aint&& other); // move assignment 
 
 	bool operator<(const aint & other) const;
 	bool operator>(const aint & other) const;
@@ -38,12 +38,12 @@ public:
 	aint& operator<<(const size_t& val);
 	aint& operator>>(const size_t& val);
 
-	ostream& operator<<(std::ostream& os, const aint& out);
-	istream& operator>>(std::istream& is, aint& in);
+	ostream& operator<<(ostream& os, const aint& out);
+	istream& operator>>(istream& is, aint& in);
 	bool zero() const;
 	void swap(aint &other);
-	int getSize();
-	int getSizeDeclared();
+	long long getSize();
+	long long getSizeDeclared();
 private:
 	long long size;
 	unsigned* ptr;

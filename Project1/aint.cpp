@@ -22,16 +22,16 @@ aint::aint(unsigned u)
 	else
 	{
 		this->size = 1;
-	
 		ptr[0] = u;
 	}
 
 }
 
-int aint::getSize() {
+long long aint::getSize() {
 	return size; 
 }
-	int aint::getSizeDeclared() {
+
+long long aint::getSizeDeclared() {
 	return sizeDeclared;
 }
 	// copy constructor 2
@@ -61,7 +61,8 @@ aint& aint::operator=(const aint& other) {
 } 
 
 // move assignment 
-aint& aint::operator=(aint& other) {
+aint& aint::operator=(aint&& other) {
+	swap();
 	return *this; 
 }
 
@@ -180,4 +181,11 @@ void aint::swap(aint &other)
 {
 	  
 }
+ostream& operator<<(ostream& os, const aint& out) {
+
+}
+istream& operator>>(istream& is, aint& in) {
+
+}
+
 
