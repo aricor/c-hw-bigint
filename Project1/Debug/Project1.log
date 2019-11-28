@@ -1,1 +1,17 @@
-﻿  Project1.vcxproj -> C:\Users\Admin\Desktop\c++hw\Project1\Debug\Project1.exe
+﻿  aint.cpp
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(41): error C2804: binary 'operator <<' has too many parameters
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(42): error C2804: binary 'operator >>' has too many parameters
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(51): warning C4521: 'aint': multiple copy constructors specified
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(51): warning C4522: 'aint': multiple assignment operators specified
+c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(32): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(35): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+  main.cpp
+c:\users\admin\desktop\c++hw\project1\project1\main.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(41): error C2804: binary 'operator <<' has too many parameters
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(42): error C2804: binary 'operator >>' has too many parameters
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(51): warning C4521: 'aint': multiple copy constructors specified
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(51): warning C4522: 'aint': multiple assignment operators specified
+c:\users\admin\desktop\c++hw\project1\project1\main.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...

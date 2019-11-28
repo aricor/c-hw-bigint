@@ -1,13 +1,13 @@
 
 #include "aint.hpp"
-
+// constructor
 aint::aint()
 {
 	this->sizeDeclared = 10;
 	this->size = 0;
 	this->ptr = new unsigned[10];
 }
-
+// copy constructor 1
 aint::aint(unsigned u)
 {
 	size = 0;
@@ -34,20 +34,35 @@ int aint::getSize() {
 	int aint::getSizeDeclared() {
 	return sizeDeclared;
 }
+	// copy constructor 2
 aint::aint(const aint& other)
 {
-
+	size = other.size; 
+	sizeDeclared = other.sizeDeclared; 
+	ptr = other.ptr; 
 }
 
-
+//destructor
 aint::~aint()
 {
 	delete[] ptr;
 }
-
+// copy assignment 1
 aint& aint::operator=(unsigned u)
 {
+	size = 1; 
+	ptr[0] = u;
 	return *this;
+}
+//copy assignment 2
+aint& aint::operator=(const aint& other) {
+
+	return *this = aint(other); 
+} 
+
+// move assignment 
+aint& aint::operator=(aint& other) {
+	return *this; 
 }
 
 bool aint::operator<(const aint & other) const

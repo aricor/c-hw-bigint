@@ -1,16 +1,19 @@
 #ifndef _AINT_H_
 #define _AINT_H_
+#include <iostream>;
 using namespace std; 
 class aint
 {
 public:
-	aint();
-	aint(unsigned u);
-	aint(const aint& other);
-	~aint();
-
+	~aint(); //destructor
+	aint(); // constructor
+	aint(unsigned u); // copy constructor 1
+	aint& operator=(unsigned u); // copy assignment 1
 	
-	aint& operator=(unsigned u);
+	aint(const aint& other); // copy constructor 2
+	aint(aint& other); // move constructor
+	aint& operator=(const aint& other); // copy assignment 2
+	aint& operator=(aint& other); // move assignment 
 
 	bool operator<(const aint & other) const;
 	bool operator>(const aint & other) const;
@@ -35,7 +38,8 @@ public:
 	aint& operator<<(const size_t& val);
 	aint& operator>>(const size_t& val);
 
-
+	ostream& operator<<(std::ostream& os, const aint& out);
+	istream& operator>>(std::istream& is, aint& in);
 	bool zero() const;
 	void swap(aint &other);
 	int getSize();
