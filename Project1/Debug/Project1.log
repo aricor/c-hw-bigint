@@ -1,3 +1,9 @@
-﻿  aint.cpp
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(50): warning C4521: 'aint': multiple copy constructors specified
+﻿  Source.cpp
+c:\users\admin\desktop\c++hw\project1\project1\source.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\admin\desktop\c++hw\project1\project1\source.cpp(10): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type '__int64'
+  c:\users\admin\desktop\c++hw\project1\project1\source.cpp(10): note: consider using '%lld' in the format string
+  c:\users\admin\desktop\c++hw\project1\project1\source.cpp(10): note: consider using '%I64d' in the format string
+c:\users\admin\desktop\c++hw\project1\project1\source.cpp(13): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type '__int64'
+  c:\users\admin\desktop\c++hw\project1\project1\source.cpp(13): note: consider using '%lld' in the format string
+  c:\users\admin\desktop\c++hw\project1\project1\source.cpp(13): note: consider using '%I64d' in the format string
   Project1.vcxproj -> C:\Users\Admin\Desktop\c++hw\Project1\Debug\Project1.exe

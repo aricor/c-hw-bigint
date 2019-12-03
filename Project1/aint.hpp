@@ -14,7 +14,8 @@ public:
 	aint(aint& other); // move constructor
 	aint& operator=(const aint& other); // copy assignment 2
 	aint& operator=(aint&& other); // move assignment 
-
+	void extendSizeDeclared(int i);
+		 
 	bool operator<(const aint & other) const;
 	bool operator>(const aint & other) const;
 	bool operator<=(const aint & other) const;
@@ -43,7 +44,7 @@ public:
 	void swap(aint &other);
 	long long getSize();
 	long long getSizeDeclared();
-private:
+//private:
 	long long size;
 	unsigned* ptr;
 	long long sizeDeclared; 
