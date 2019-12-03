@@ -159,8 +159,8 @@ aint& aint::operator<<=(const size_t& val)
 {  
 	while ((size + val) > sizeDeclared) {
 		sizeDeclared *= 2;
+		extendSizeDeclared(sizeDeclared);
 	}
-	extendSizeDeclared(sizeDeclared);
 
 	return *this;
 }
@@ -172,11 +172,34 @@ aint& aint::operator>>=(const size_t& val)
 
 aint& aint::operator+(const aint& other)
 {
+	int num = 0; 
+	int carry = 0; 
+
+	for (int i = 0; i < size; i++) {
+		if (i < *other.ptr.getSize()) {
+			num - ptr[i] + other.ptr[i] + carry;
+		}
+		else
+			num = ptr[i] + carry; 
+		if (num >= 10) {
+			num = num - 10;
+			carry = 1;
+		}
+		else
+			carry = 0; 
+		ptr[i] = num; 
+	}
+	if (carry) {
+		sizeDeclared *= 2; 
+		extendSizeDeclared(sizeDeclared);
+		ptr[ptr.getSize() - 1] = carry; 
+	}
 	return *this;
 }
-
+ 
 aint& aint::operator-(const aint& other)
 {
+
 	return *this;
 }
 
