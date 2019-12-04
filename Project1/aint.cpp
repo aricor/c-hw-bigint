@@ -264,6 +264,7 @@ aint& aint::operator-(const aint& other)
 			 sub = max[i] - min[i] -borrow; 
 			 borrow = 0; 
 		}
+		// vd 1870 - 199 hàng đơn vị 0 < 9 hoặc 994 - 95, hàng đơn vị 4 mượn 1 = 14 trừ 5 = 9 nhớ 1, hàng chục 9 + 1 (của 95) > 9 của 994  
 		else if ((max[i] < min[i]) ||  ((max[i] == min[i]) && (min[i] + borrow > max[i]) )) {
 			sub = (max[i] + 10) - min[i] - borrow; 
 			borrow = 1; 
@@ -271,8 +272,11 @@ aint& aint::operator-(const aint& other)
 		this->ptr[i] = sub; 
 		count++;
 	}
+	// nếu còn dư 1 
 	if (borrow) {
+		// vd như 2675 - 978, 15- 8 = 7, mượn 1, 17 - (7+1) = 9, mượn 1, 16 - (9+1) = 6, borrow vẫn còn 1, lấy 2 - 1 
 		sub = max[max.size - min.size] - 1; 
+		// vd như 222675 - 978, làm như trên, còn dư 2 số 2 đầu thì copy xuống 
 		if (diff >=2) 
 			for (int i = diff - 1; i >= 0; i--) {
 				this->ptr[count - 1] = max[i]; 
@@ -285,6 +289,7 @@ aint& aint::operator-(const aint& other)
 
 aint& aint::operator*(const aint& other)
 {
+
 	return *this;
 }
 
