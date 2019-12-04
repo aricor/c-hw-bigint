@@ -1,15 +1,28 @@
 ﻿  aint.cpp
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(51): warning C4521: 'aint': multiple copy constructors specified
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(47): warning C4244: 'initializing': conversion from '__int64' to 'unsigned int', possible loss of data
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(79): warning C4244: 'initializing': conversion from '__int64' to 'unsigned int', possible loss of data
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(162): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(179): error C2228: left of '.getSize' must have class/struct/union
-  c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(179): note: type is 'unsigned int *const '
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(180): warning C4552: '+': result of expression not used
-c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(194): warning C4244: 'argument': conversion from '__int64' to 'int', possible loss of data
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(11): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(53): error C2371: 'aint::size': redefinition; different basic types
+  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(10): note: see declaration of 'aint::size'
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(53): error C2229: class 'aint' has an illegal zero-sized array
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(54): error C2372: 'aint::ptr': redefinition; different types of indirection
+  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(11): note: see declaration of 'aint::ptr'
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(55): error C2371: 'aint::sizeDeclared': redefinition; different basic types
+  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(9): note: see declaration of 'aint::sizeDeclared'
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(56): warning C4521: 'aint': multiple copy constructors specified
+c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(47): error C3078: array size must be specified in new expressions
+c:\users\admin\desktop\c++hw\project1\project1\aint.cpp(79): error C3078: array size must be specified in new expressions
   main.cpp
 c:\users\admin\desktop\c++hw\project1\project1\main.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(51): warning C4521: 'aint': multiple copy constructors specified
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(11): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(53): error C2371: 'aint::size': redefinition; different basic types
+  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(10): note: see declaration of 'aint::size'
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(53): error C2229: class 'aint' has an illegal zero-sized array
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(54): error C2372: 'aint::ptr': redefinition; different types of indirection
+  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(11): note: see declaration of 'aint::ptr'
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(55): error C2371: 'aint::sizeDeclared': redefinition; different basic types
+  c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(9): note: see declaration of 'aint::sizeDeclared'
+c:\users\admin\desktop\c++hw\project1\project1\aint.hpp(56): warning C4521: 'aint': multiple copy constructors specified
 c:\users\admin\desktop\c++hw\project1\project1\main.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\users\admin\desktop\c++hw\project1\project1\main.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\users\admin\desktop\c++hw\project1\project1\main.cpp(14): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'aint'

@@ -99,13 +99,47 @@ void aint::extendSizeDeclared(int sizeAfterExtend) {
 
 bool aint::operator<(const aint & other) const
 {
-	return false;
+	if (this->size < other.size)
+		return true;
+	for (int i = 0; i < size; i++) {
+		if (this->ptr[i] != other.ptr[i])
+			return (this->ptr[i] < other.ptr[i]);
+	}
+	//else if (this->size == other.size) {
+		//for (int i = 0; i < size; i++) {
+			//if (this->ptr[i] < other.ptr[i])
+				//continue; 
+			//else {
+				//break; 
+				//return false; 
+			//}
+	//	}
+	//}
+	//return true;
 
 }
 
 bool aint::operator>(const aint & other) const
 {
-	return false;
+	if (this->size > other.size)
+		return true;
+	for (int i = 0; i < size; i++) {
+		if (this->ptr[i] != other.ptr[i])
+			return (this->ptr[i] > other.ptr[i]);
+	}
+	//if (this->size > other.size)
+		//return true;
+	//else if (this->size == other.size) {
+		//for (int i = 0; i < size; i++) {
+			//if (this->ptr[i] > other.ptr[i])
+				//continue;
+			//else {
+				//break;
+				//return false;
+			//}
+		//}
+	//}
+	//return true;
 
 }
 
@@ -121,7 +155,18 @@ bool aint::operator>=(const aint & other) const
 }
 bool aint::operator==(const aint & other) const
 {
-	return false;
+	if (this->size == other.size) {
+		for (int i = 0; i < size; i++) {
+			if (this->ptr[i] == other.ptr[i])
+				continue;
+			else {
+				break; 
+				return false;
+			}
+		}
+ 
+	}
+	return true;
 
 }
 
@@ -172,33 +217,53 @@ aint& aint::operator>>=(const size_t& val)
 
 aint& aint::operator+(const aint& other)
 {
-	int num = 0; 
-	int carry = 0; 
-
-	for (int i = 0; i < size; i++) {
-		if (i < *other.ptr.getSize()) {
-			num - ptr[i] + other.ptr[i] + carry;
-		}
-		else
-			num = ptr[i] + carry; 
-		if (num >= 10) {
-			num = num - 10;
-			carry = 1;
-		}
-		else
-			carry = 0; 
-		ptr[i] = num; 
+	if (other.size > this->size) {
+		this->extendSizeDeclared(other.size);
 	}
-	if (carry) {
-		sizeDeclared *= 2; 
-		extendSizeDeclared(sizeDeclared);
-		ptr[ptr.getSize() - 1] = carry; 
+
+	int mem = 0; 
+	long long max; 
+	if (other.size >= this->size)
+		max = other.size;
+	else
+		max = this->size; 
+	
+	for (int i = 0 ; i < max ; i++) {
+		int sum = other.ptr[i] + this->ptr[i] + mem; 
+		mem = sum / 10;
+		this->ptr[i] = sum % 10; 
+
+	}
+	if (mem > 10) {
+		this->extendSizeDeclared(this->size + 1);
+		this->ptr[this->size - 1] = mem;
 	}
 	return *this;
 }
  
 aint& aint::operator-(const aint& other)
 {
+	unsigned *max; 
+	unsigned *min; 
+	if (other.ptr > this->ptr) {
+		max = other.ptr; 
+		min = this->ptr;
+	}
+	else {
+		max = this->ptr; 
+		min = other.ptr; 
+	}
+	int sub; 
+	int borrow = 0; 
+	for (int i = min.size - 1; i >= 0; i--) {
+		if (max[i] >= min[i]) {
+			 sub = max[i] - min[i] -borrow; 
+		}
+		else {
+			sub = (max[i] + 10) - min[i] - borrow; 
+			borrow = 1; 
+		}
+	}
 
 	return *this;
 }
