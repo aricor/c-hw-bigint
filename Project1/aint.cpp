@@ -245,6 +245,7 @@ aint& aint::operator-(const aint& other)
 {
 	unsigned *max; 
 	unsigned *min; 
+	int count = 0; 
 	if (other.ptr > this->ptr) {
 		max = other.ptr; 
 		min = this->ptr;
@@ -253,18 +254,30 @@ aint& aint::operator-(const aint& other)
 		max = this->ptr; 
 		min = other.ptr; 
 	}
+	int diff = max.size - min.size; 
 	int sub; 
 	int borrow = 0; 
 	for (int i = min.size - 1; i >= 0; i--) {
 		if (max[i] >= min[i]) {
 			 sub = max[i] - min[i] -borrow; 
+			 borrow -= 1; 
 		}
-		else {
+		else if ((max[i] < min[i]) ||  ((max[i] == min[i]) && (min[i] + borrow > max[i]) )) {
 			sub = (max[i] + 10) - min[i] - borrow; 
 			borrow = 1; 
 		}
+		this->ptr[i] = sub; 
+		count++;
 	}
-
+	if (borrow) {
+		sub = max[max.size - min.size] - 1; 
+		if (diff >=2) 
+			for (int i = diff - 1; i >= 0; i--) {
+				this->ptr[count - 1] = max[i]; 
+				count++; 
+		}
+	}
+	
 	return *this;
 }
 
