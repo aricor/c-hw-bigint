@@ -1,4 +1,4 @@
-
+﻿
 #include "aint.hpp"
 #include <cmath>
 
@@ -257,10 +257,12 @@ aint& aint::operator-(const aint& other)
 	int diff = max.size - min.size; 
 	int sub; 
 	int borrow = 0; 
+	// chạy từ cuối lên đầu, số lớn trừ số nhỏ 
 	for (int i = min.size - 1; i >= 0; i--) {
+		//  vd 987-123, hàng đơn vị 7 lớn hơn 3 
 		if (max[i] >= min[i]) {
 			 sub = max[i] - min[i] -borrow; 
-			 borrow -= 1; 
+			 borrow = 0; 
 		}
 		else if ((max[i] < min[i]) ||  ((max[i] == min[i]) && (min[i] + borrow > max[i]) )) {
 			sub = (max[i] + 10) - min[i] - borrow; 
