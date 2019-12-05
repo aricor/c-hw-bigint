@@ -103,58 +103,64 @@ void aint::extendSizeDeclared(int sizeAfterExtend)
 
 bool aint::operator<(const aint &other) const
 {
-	if (this->size < other.size)
+if (this->size < other.size)
 		return true;
+	else
+		if (this->size > other.size)
+			return false;
 	for (int i = 0; i < size; i++)
 	{
 		if (this->ptr[i] != other.ptr[i])
 			return (this->ptr[i] < other.ptr[i]);
 	}
-	//else if (this->size == other.size) {
-	//for (int i = 0; i < size; i++) {
-	//if (this->ptr[i] < other.ptr[i])
-	//continue;
-	//else {
-	//break;
-	//return false;
-	//}
-	//	}
-	//}
-	//return true;
+	return false;
 }
 
 bool aint::operator>(const aint &other) const
 {
 	if (this->size > other.size)
 		return true;
+	else
+		if (this->size < other.size)
+			return false;
 	for (int i = 0; i < size; i++)
 	{
 		if (this->ptr[i] != other.ptr[i])
 			return (this->ptr[i] > other.ptr[i]);
 	}
-	//if (this->size > other.size)
-	//return true;
-	//else if (this->size == other.size) {
-	//for (int i = 0; i < size; i++) {
-	//if (this->ptr[i] > other.ptr[i])
-	//continue;
-	//else {
-	//break;
-	//return false;
-	//}
-	//}
-	//}
-	//return true;
+	return false;
+
 }
 
 bool aint::operator<=(const aint &other) const
 {
-	return false;
+	if (this->size < other.size)
+		return true;
+	else
+		if (this->size > other.size)
+			return false;
+		
+	for (int i = 0; i < size; i++)
+	{
+		if (this->ptr[i] != other.ptr[i])
+			return (this->ptr[i] < other.ptr[i]);
+	}
+	return true;
 }
 
 bool aint::operator>=(const aint &other) const
 {
-	return false;
+	if (this->size > other.size)
+		return true;
+	else
+		if (this->size < other.size)
+			return false;
+	for (int i = 0; i < size; i++)
+	{
+		if (this->ptr[i] != other.ptr[i])
+			return (this->ptr[i] > other.ptr[i]);
+	}
+	return true;
 }
 bool aint::operator==(const aint &other) const
 {
@@ -162,16 +168,11 @@ bool aint::operator==(const aint &other) const
 	{
 		for (int i = 0; i < size; i++)
 		{
-			if (this->ptr[i] == other.ptr[i])
-				continue;
-			else
-			{
-				break;
+			if (this->ptr[i] != other.ptr[i])
 				return false;
-			}
-		}
+		}	
 	}
-	return true;
+	return false;
 }
 
 bool aint::operator!=(const aint &other) const
@@ -379,10 +380,18 @@ bool aint::zero() const
 
 void aint::swap(aint &other)
 {
-	unsigned *temp;
-	temp = ptr;
-	ptr = other.ptr;
-	other.ptr = temp;
+	unsigned *temp_ptr;
+		long long temp_size, temp_sizeDeclared;
+		temp_ptr = ptr;	
+		temp_size = size;
+		temp_sizeDeclared = sizeDeclared;
+		ptr = other.ptr;
+		size = other.size;
+		sizeDeclared = other.sizeDeclared;
+		other.ptr = temp_ptr;
+		other.size = temp_size;
+		other.sizeDeclared = temp_sizeDeclared;
+
 }
 ostream &operator<<(ostream &os, const aint &out)
 {
