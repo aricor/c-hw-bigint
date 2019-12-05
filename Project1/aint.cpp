@@ -325,6 +325,7 @@ aint &aint::operator*(const aint &other)
 			temp.ptr[size] = mem;
 			temp.size++;
 		}
+		cout << temp.ptr[0] << ' ' << temp.ptr[1] << ' ' << temp.ptr[2] << "!\n ";
 		// + kết quả lại
 		result = result + temp;
 		// cout << result.ptr[0] << result.ptr[1] << result.ptr[2] << '\n';
