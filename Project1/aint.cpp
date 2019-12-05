@@ -291,10 +291,40 @@ aint &aint::operator-(const aint &other)
 	return *this;
 }
 
+
 aint &aint::operator*(const aint &other)
 {
-
-	return *this;
+	aint result;
+	result.ptr[0] = 0;
+	result.size = 1;
+	for (int i = 0; i < other.size; i++)
+	{
+		aint temp;
+		temp.size = this->size + i;
+		for (int j = 0; j < i; j++)
+		{
+			temp.ptr[j] = 0;
+		}
+		for (int j = i; j < this->size + i; j++)
+		{
+			temp.ptr[j] = this->ptr[j - i];
+		}
+		int mem = 0;
+		for (int k = 0; k < temp.size; k++)
+		{
+			int sum = temp.ptr[k] * other.ptr[i] + mem;
+			mem = sum / 10;
+			temp.ptr[k] = sum % 10;
+		}
+		if (mem > 0)
+		{
+			temp.ptr[size] = mem;
+			temp.size++;
+		}
+		result = result + temp;
+		// cout << result.ptr[0] << result.ptr[1] << result.ptr[2] << '\n';
+	}
+	return result;
 }
 
 aint &aint::operator/(const aint &other)

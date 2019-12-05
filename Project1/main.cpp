@@ -9,7 +9,7 @@ int main()
 	aint x, y;
 	x.size = 2;
 	y.size = 2;
-	x.ptr[0] = 5;
+	x.ptr[0] = 0;
 	x.ptr[1] = 6;
 	y.ptr[0] = 7;
 	y.ptr[1] = 1;
