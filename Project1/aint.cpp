@@ -299,20 +299,19 @@ aint &aint::operator*(const aint &other)
 	result.size = 1;
 	for (int i = 0; i < other.size; i++)
 	{
-		// cái mảng temp của mình
 		aint temp;
-		// thêm số 0 vào đầu mảng (*10^i)
+		// add 0s to the beginning of array (*10^i)
 		temp.size = this->size + i;
 		for (int j = 0; j < i; j++)
 		{
 			temp.ptr[j] = 0;
 		}
-		// thêm số bình thường vào
+		// add numbers
 		for (int j = i; j < this->size + i; j++)
 		{
 			temp.ptr[j] = this->ptr[j - i];
 		}
-		// nhân bình thường
+		// multiplication
 		int mem = 0;
 		for (int k = 0; k < temp.size; k++)
 		{
@@ -325,10 +324,9 @@ aint &aint::operator*(const aint &other)
 			temp.ptr[size] = mem;
 			temp.size++;
 		}
-		cout << temp.ptr[0] << ' ' << temp.ptr[1] << ' ' << temp.ptr[2] << "!\n ";
-		// + kết quả lại
+		//cout << temp.ptr[0] << ' ' << temp.ptr[1] << ' ' << temp.ptr[2] << "!\n ";
 		result = result + temp;
-		cout << result.size << '\n';
+		//cout << result.size << '\n';
 		// cout << result.ptr[0] << result.ptr[1] << result.ptr[2] << '\n';
 	}
 	return result;
@@ -336,6 +334,22 @@ aint &aint::operator*(const aint &other)
 
 aint &aint::operator/(const aint &other)
 {
+	//unsigned int 	
+	int num1 = 0; 
+	int num2=0; 
+	for (int i = size-1; i >=0; i-- ) {
+		num1 = 10*num1 + this->ptr[i]; 
+	}
+	for (int i = size-1; i >=0; i-- ) {
+		num2 = 10*num2 + other.ptr[i]; 
+	}
+	int res = num1/num2; 
+	
+	for (int i = size-1; i >=0; i--) {
+		this->ptr[i] = res%10; 
+		res /= 10; 
+	}
+
 	return *this;
 }
 

@@ -14,7 +14,7 @@ int main()
     y.ptr[0] = 7;
     y.ptr[1] = 1;
 
-    x = x * y;
+    x = x / y;
     cout << x.ptr[0] << '\n';
     cout << x.ptr[1] << '\n';
     cout << x.ptr[2] << '\n';
