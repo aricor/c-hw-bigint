@@ -1,27 +1,21 @@
 #include "aint.hpp";
 #include <iostream>;
-#include<stdio.h> ;
+#include <stdio.h> ;
 
 using namespace std;
 
 int main()
 {
 	aint x, y;
-	//unsigned *aint::ptr;
-	y = 5;
-	x = y;
-	cout << x.ptr[0] << " " << endl;
-	printf("x << 1 = %d\n", x <<= (2));
+	x.size = 2;
+	y.size = 2;
+	x.ptr[0] = 5;
+	x.ptr[1] = 6;
+	y.ptr[0] = 7;
+	y.ptr[1] = 1;
 
-	cout << y.ptr[0]++ << " " << endl;
-	y.ptr[0]++;
-	cout << y.ptr[0] << " " << endl;
-	y.ptr[0]++;
-	cout << y.ptr[0] << " " << endl;
-	//aint& operator=(5);
-	cout << x.ptr[0] << " " << endl;
-
-	system("pause");
-
-	//return 0;
+	x = x - y;
+	cout << x.ptr[0] << '\n';
+	cout << x.ptr[1];
+	return 0;
 }
