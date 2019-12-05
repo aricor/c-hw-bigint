@@ -240,50 +240,47 @@ aint& aint::operator+(const aint& other)
 	return *this;
 }
 
-aint& aint::operator-(const aint& other)
+aint &aint::operator-(const aint &other)
 {
+    aint larger;
+    aint smaller;
 
-	aint larger; aint smaller;
-	int count = 0;
-	if (other.ptr > &this->ptr) {
-		larger = other.ptr;
-		smaller = this->ptr;
-	}
-	else {
-		larger = this->ptr;
-		smaller = other.ptr;
-	}
-	int diff = max.size - min.size;
-	int sub;
-	int borrow = 0;
-	// chạy từ cuối lên đầu, số lớn trừ số nhỏ 
-	for (int i = 0; i < max = 0; i--) {
-		//  vd 987-123, hàng đơn vị 7 lớn hơn 3 
-		if (max[i] >= min[i]) {
-			sub = max[i] - min[i] - borrow;
-			borrow = 0;
-		}
-		// vd 1870 - 199 hàng đơn vị 0 < 9 hoặc 994 - 95, hàng đơn vị 4 mượn 1 = 14 trừ 5 = 9 nhớ 1, hàng chục 9 + 1 (của 95) > 9 của 994  
-		else if ((max[i] < min[i]) || ((max[i] == min[i]) && (min[i] + borrow > max[i]))) {
-			sub = (max[i] + 10) - min[i] - borrow;
-			borrow = 1;
-		}
-		this->ptr[i] = sub;
-		count++;
-	}
-	// nếu còn dư 1 
-	if (borrow) {
-		// vd như 2675 - 978, 15- 8 = 7, mượn 1, 17 - (7+1) = 9, mượn 1, 16 - (9+1) = 6, borrow vẫn còn 1, lấy 2 - 1 
-		sub = max[max.size - min.size] - 1;
-		// vd như 222675 - 978, làm như trên, còn dư 2 số 2 đầu thì copy xuống 
-		if (diff >= 2)
-			for (int i = diff - 1; i >= 0; i--) {
-				this->ptr[count - 1] = max[i];
-				count++;
-			}
-	}
+    int count = 0;
+    if (this < &other)
+    {
+        larger = other;
+        smaller = *this;
+    }
+    else
+    {
+        larger = *this;
+        smaller = other;
+    }
 
-	return *this;
+    int mem = 0;
+    for (int i = 0; i < larger.size; i++)
+    {
+        int sum;
+        if (larger.ptr[i] < smaller.ptr[i] + mem)
+        {
+            sum = 10 + larger.ptr[i] - smaller.ptr[i] - mem;
+            mem = 1;
+        }
+        else
+        {
+            sum = larger.ptr[i] - smaller.ptr[i] - mem;
+        }
+        this->ptr[i] = sum % 10;
+    }
+
+    for (int i = this->size; i >= 0; i--)
+        if (this->ptr[i] != 0)
+        {
+            this->size = i;
+        }
+    if (this->size = 0)
+        this->size = 1;
+    return *this;
 }
 
 aint& aint::operator*(const aint& other)
