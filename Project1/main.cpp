@@ -6,21 +6,15 @@ using namespace std;
 
 int main()
 {
-	aint x, y;
+	//aint x, y;
+//	cin >> x;
+//	cin >> y;
 	//unsigned *aint::ptr;
-	y = 5;
-	x = y;
-	cout << x.ptr[0] << " " << endl;
-	printf("x << 1 = %d\n", x <<= (2));
-
-	cout << y.ptr[0]++ << " " << endl;
-	y.ptr[0]++;
-	cout << y.ptr[0] << " " << endl;
-	y.ptr[0]++;
-	cout << y.ptr[0] << " " << endl;
-	//aint& operator=(5);
-	cout << x.ptr[0] << " " << endl;
-
+	char a = 56;
+	cout << a;
+	printf("%c", a);
+	printf("%d", a);
+	//cout << x + y << endl;
 	system("pause");
 
 	//return 0;
