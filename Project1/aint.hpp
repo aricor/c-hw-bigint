@@ -5,15 +5,15 @@ using namespace std;
 class aint
 {
 public:
-	~aint();                     //destructor
-	aint();                      // constructor
-	aint(unsigned u);            // copy constructor 1
+	~aint();					 //destructor
+	aint();						 // constructor
+	aint(unsigned u);			 // copy constructor 1
 	aint &operator=(unsigned u); // copy assignment 1
 
-	aint(const aint &other);            // copy constructor 2
-	aint(aint &other);                  // move constructor
+	aint(const aint &other);			// copy constructor 2
+	aint(aint &other);					// move constructor
 	aint &operator=(const aint &other); // copy assignment 2
-	aint &operator=(aint &&other);      // move assignment
+	aint &operator=(aint &&other);		// move assignment
 	void extendSizeDeclared(int i);
 
 	bool operator<(const aint &other) const;
