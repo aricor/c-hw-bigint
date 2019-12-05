@@ -328,6 +328,7 @@ aint &aint::operator*(const aint &other)
 		cout << temp.ptr[0] << ' ' << temp.ptr[1] << ' ' << temp.ptr[2] << "!\n ";
 		// + kết quả lại
 		result = result + temp;
+		cout << result.size << '\n';
 		// cout << result.ptr[0] << result.ptr[1] << result.ptr[2] << '\n';
 	}
 	return result;
