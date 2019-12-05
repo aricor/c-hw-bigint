@@ -293,21 +293,26 @@ aint &aint::operator-(const aint &other)
 
 aint &aint::operator*(const aint &other)
 {
+	// cái mảng kết quả của mình
 	aint result;
 	result.ptr[0] = 0;
 	result.size = 1;
 	for (int i = 0; i < other.size; i++)
 	{
+		// cái mảng temp của mình
 		aint temp;
+		// thêm số 0 vào đầu mảng (*10^i)
 		temp.size = this->size + i;
 		for (int j = 0; j < i; j++)
 		{
 			temp.ptr[j] = 0;
 		}
+		// thêm số bình thường vào
 		for (int j = i; j < this->size + i; j++)
 		{
 			temp.ptr[j] = this->ptr[j - i];
 		}
+		// nhân bình thường
 		int mem = 0;
 		for (int k = 0; k < temp.size; k++)
 		{
@@ -320,6 +325,7 @@ aint &aint::operator*(const aint &other)
 			temp.ptr[size] = mem;
 			temp.size++;
 		}
+		// + kết quả lại
 		result = result + temp;
 		// cout << result.ptr[0] << result.ptr[1] << result.ptr[2] << '\n';
 	}
